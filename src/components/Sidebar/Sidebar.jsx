@@ -13,9 +13,9 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
         <div className="top">
-            <div className='menu'><GiHamburgerMenu onClick={() => setExtended((prev) => !prev)}/></div>
+            <div className='menu'><GiHamburgerMenu onClick={() => setExtended((prev) => !prev)} size={35}/></div>
             <div className="new-chat">
-                <BsPlusSquareFill/>
+                <BsPlusSquareFill size={30}/>
                 {extended ? <p>New Chat</p> : null} 
             </div>
             {
@@ -23,7 +23,7 @@ const Sidebar = () => {
                 <div className='recent'>
                     <p className='recent-title'>Recent</p>
                     <div className="recent-entry">
-                        <RiMessage2Fill/>
+                        <RiMessage2Fill size={30}/>
                         <p>What is React?</p>
                     </div>
                 </div> : null
@@ -32,15 +32,15 @@ const Sidebar = () => {
         </div>
         <div className="bottom">
             <div className="bottom-item recent-entry">
-                <BsFillPatchQuestionFill/>
+                <BsFillPatchQuestionFill size={30}/>
                 {extended ? <p>Help</p> : null}
             </div>
             <div className="bottom-item recent-entry">
-                <FaHistory/>
+                <FaHistory size={30}/>
                 {extended ? <p>Activity</p> : null}
             </div>
             <div className="bottom-item recent-entry">
-                <IoSettingsOutline/>
+                <IoSettingsOutline size={30}/>
                 {extended ? <p>Settings</p> : null}
             </div>
         </div>
