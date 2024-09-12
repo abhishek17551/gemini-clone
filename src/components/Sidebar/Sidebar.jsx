@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './sidebar.css'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BsPlusSquareFill } from "react-icons/bs";
@@ -6,10 +6,17 @@ import { RiMessage2Fill } from "react-icons/ri";
 import { BsFillPatchQuestionFill } from "react-icons/bs";
 import { FaHistory } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
+import { InputContext } from '../../context/InputContext';
 
 
 const Sidebar = () => {
     const [extended,setExtended] = useState()
+    const {onSent,prevPrompts,setRecentPrompt} = useContext(InputContext)
+
+    const loadPrompt = async (prompt) => {
+        setRecentPrompt(prompt)
+        await onSent(prompt)
+    }
   return (
     <div className="sidebar">
         <div className="top">
@@ -22,10 +29,14 @@ const Sidebar = () => {
                 extended ? 
                 <div className='recent'>
                     <p className='recent-title'>Recent</p>
-                    <div className="recent-entry">
-                        <RiMessage2Fill size={30}/>
-                        <p>What is React?</p>
-                    </div>
+                    {
+                        prevPrompts.map((item,index) => (
+                            <div className="recent-entry" onClick={()=> loadPrompt(item)}>
+                                <RiMessage2Fill size={30}/>
+                                <p>{item.slice(0,20)}</p>
+                            </div>
+                        ))
+                    }
                 </div> : null
 
             }

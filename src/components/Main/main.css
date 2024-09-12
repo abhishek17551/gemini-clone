@@ -113,12 +113,9 @@
     margin: 40px 0px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
-.result img{
-    width: 40px;
-    border-radius: 50px;
-}
+
 .result-data{
     display: flex;
     align-items: start;
@@ -133,8 +130,8 @@
 .loader hr{
 border-radius: 4px;
 border: none;
-background-color: #f6f7f8;
-background: linear-gradient(to right,#b1d5ee,#c953e98a,#9ed7ff);
+background-color: #f6a7f8;
+background: linear-gradient(to right,#b1d5be,#c953e98a,#9ed8ff);
 background-size: 800px 50px;
 height: 20px;
 animation: loader 4s infinite linear;
