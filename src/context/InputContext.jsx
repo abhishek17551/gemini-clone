@@ -51,6 +51,10 @@ const InputProvider = (props) => {
         }, 75*index)
     }
 
+    const newChat = () => {
+        setLoading(false)
+        setShowResult(false)
+    }
     
     const inputValue = {
         prevPrompts,
@@ -62,7 +66,8 @@ const InputProvider = (props) => {
         onSent,
         resultData,
         input,
-        setInput
+        setInput,
+        newChat
     }
 
     return (

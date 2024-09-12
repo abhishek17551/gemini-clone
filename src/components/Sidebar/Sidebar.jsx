@@ -11,7 +11,7 @@ import { InputContext } from '../../context/InputContext';
 
 const Sidebar = () => {
     const [extended,setExtended] = useState()
-    const {onSent,prevPrompts,setRecentPrompt} = useContext(InputContext)
+    const {onSent,prevPrompts,setRecentPrompt,newChat} = useContext(InputContext)
 
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt)
@@ -21,7 +21,7 @@ const Sidebar = () => {
     <div className="sidebar">
         <div className="top">
             <div className='menu'><GiHamburgerMenu onClick={() => setExtended((prev) => !prev)} size={35}/></div>
-            <div className="new-chat">
+            <div className="new-chat" onClick={() => newChat()}>
                 <BsPlusSquareFill size={30}/>
                 {extended ? <p>New Chat</p> : null} 
             </div>
