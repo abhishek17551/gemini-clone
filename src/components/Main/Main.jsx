@@ -23,11 +23,6 @@ const Main = () => {
                         <p><span>Hello Dev,</span></p>
                         <p>How can I help you today?</p>
                     </div>
-                    <div className="cards">
-                        <div className="card">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas temporibus deleniti nisi.</p>
-                        </div>
-                    </div>
                 </> : 
                 <div className='result'>
                     <div className="result-title">

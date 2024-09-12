@@ -62,3 +62,30 @@
     padding-right: 10px;
     cursor: pointer;
 }
+
+@media (max-width:600px) {
+    .sidebar{
+        display: none;
+    }
+    
+}
+
+@media (max-width:600px) {
+    .main-bottom input{
+        flex: none;
+        width: 8.5rem;
+    }
+    .main-bottom img{
+        width: 1.25rem;
+    }
+    .search-box{
+        padding: 5px 10px;
+    }
+    .search-box div{
+        gap: 0.5rem;
+    }
+    .greet{
+        margin: 50px 0px;
+        padding-left: 22px;
+    }
+}
